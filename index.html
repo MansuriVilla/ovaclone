@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ova - Clone</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/app.css" preload="true" />
+  </head>
+
+  <body>
+    <header id="site_header">
+      <nav class="header_navigation site_flex">
+        <div class="navigation_left site_flex-item">
+          <ul class="navigation_left-buttons site_flex">
+            <li class="navigation_left-button site_flex-item">
+              <a href="/contact" class="site_flex site_button">
+                <span data-split="lettersmix">Contact</span>
+                <span
+                  ><svg
+                    width="15"
+                    height="15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.995 4.067a.5.5 0 0 0-.428-.563l-4.46-.602a.5.5 0 1 0-.133.99l3.963.537-.535 3.964a.5.5 0 1 0 .99.133l.604-4.459Zm-10.692 8.33 10.5-8-.606-.795-10.5 8 .606.796Z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li class="navigation_left-button site_flex-item">
+              <a href="/aboutus" class="site_flex site_button"
+                ><span data-split="lettersmix">About Us</span>
+                <span
+                  ><svg
+                    width="15"
+                    height="15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.646 13.354a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L8 12.293 5.172 9.464a.5.5 0 1 0-.708.708l3.182 3.182ZM7.5 1v12h1V1h-1Z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="navigation_center site_flex-item">
+          <span>TIME</span>
+        </div>
+        <div class="navigation_right site_flex-item site_flex">
+          <button
+            class="menu_button site_flex site_button"
+            data-menu="dropdown"
+          >
+            <span data-split="lettersmix">MENU --- </span>
+            <span
+              ><img
+                src="/assets/logo-menu.avif"
+                alt="company name"
+                decoding="async"
+            /></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main id="site_content">
+      <section class="hero_section">
+        <div class="hero_inner">
+          <div class="hero_block-bg" data-overlay-layer>
+            <img
+              class="bg_first"
+              data-overlay
+              src="./assets/hero-1.avif"
+              alt="hero background"
+              decoding="async"
+            />
+            <img
+              class="bg_second"
+              data-overlay
+              src="./assets/hero-2.avif"
+              alt="hero background"
+              decoding="async"
+            />
+          </div>
+          <div class="hero_content-blocks">
+            <div class="hero__block-eyebrow">
+              <h1>
+                Valuable,that is <br />
+                our <span data-split="words">future. portfolio. collab </span>
+              </h1>
+            </div>
+            <div class="hero__block-canvas"></div>
+            <div class="hero__block-beneath">
+              <p data-split="lines">
+                OVA is an investment fund built around a central <br />
+                promise: to invest disruptively in the most <br />
+                valuable,promising, and resilient assets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="portfolio">
+        <div class="portfolio_inner">
+          <div class="portfolio_blocks" data-overlay-layer>
+            <div class="portfolio_block-bg">
+              <picture class="portfolio_block-background slide-bg active">
+                <source srcset="./assets/hero-1.avif" type="image/avif" />
+                <img
+                  src="./assets/hero-1.avif"
+                  alt="portfolio background"
+                  decoding="async"
+                />
+              </picture>
+              <picture class="portfolio_block-background slide-bg">
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1631392426516-affff6b1d41c?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1631392426516-affff6b1d41c?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="portfolio background"
+                  decoding="async"
+                />
+              </picture>
+              <picture class="portfolio_block-background slide-bg">
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1728116693268-125c5d6ad9e2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1728116693268-125c5d6ad9e2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="portfolio background"
+                  decoding="async"
+                />
+              </picture>
+              <picture class="portfolio_block-background slide-bg">
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1623258406180-df4c68d0798f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1623258406180-df4c68d0798f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="portfolio background"
+                  decoding="async"
+                />
+              </picture>
+              <picture class="portfolio_block-background slide-bg">
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1759646849737-f2a29e01cc2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1759646849737-f2a29e01cc2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
+                  alt="portfolio background"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+            <div class="portfolio_block-content" data-overlay>
+              <div class="portfolio_block-content-inner slide-content active">
+                <div class="portfolio_block-content-title">
+                  <h2 data-split="lines">Portfolio 01</h2>
+                </div>
+                <div class="portfolio_block-content-description">
+                  <h3>Overview</h3>
+                  <p data-split="lines">
+                    First slide description. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Omnis doloremque quasi impedit
+                    assumenda?
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio_block-content-inner slide-content">
+                <div class="portfolio_block-content-title">
+                  <h2 data-split="lines">Portfolio 02</h2>
+                </div>
+                <div class="portfolio_block-content-description">
+                  <h3>Details</h3>
+                  <p data-split="lines">
+                    Second slide description. Explicabo vero totam aspernatur
+                    dolorum ipsa porro maiores sapiente.
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio_block-content-inner slide-content">
+                <div class="portfolio_block-content-title">
+                  <h2 data-split="lines">Portfolio 03</h2>
+                </div>
+                <div class="portfolio_block-content-description">
+                  <h3>Conclusion</h3>
+                  <p data-split="lines">
+                    Third slide description. Consequatur dolores praesentium
+                    eaque porro voluptates.
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio_block-content-inner slide-content">
+                <div class="portfolio_block-content-title">
+                  <h2 data-split="lines">Portfolio 04</h2>
+                </div>
+                <div class="portfolio_block-content-description">
+                  <h3>Conclusion</h3>
+                  <p data-split="lines">
+                    Fourth slide description. Consequatur dolores praesentium
+                    eaque porro voluptates.
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio_block-content-inner slide-content">
+                <div class="portfolio_block-content-title">
+                  <h2 data-split="lines">Portfolio 05</h2>
+                </div>
+                <div class="portfolio_block-content-description">
+                  <h3>Conclusion</h3>
+                  <p data-split="lines">
+                    Fifth slide description. Consequatur dolores praesentium
+                    eaque porro voluptates.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio_block-index" data-overlay="">
+              <div class="index_wrapper">
+                <div class="portfolio_index-items">
+                  <div class="index_item index_items-one">
+                    <span>01</span>
+                    <span class="index_item-active-bar"></span>
+                  </div>
+                  <div class="index_item index_items-two">
+                    <span>02</span>
+                    <span class="index_item-active-bar"></span>
+                  </div>
+                  <div class="index_item index_items-three">
+                    <span>03</span>
+                    <span class="index_item-active-bar"></span>
+                  </div>
+                  <div class="index_item index_items-four">
+                    <span>04</span>
+                    <span class="index_item-active-bar"></span>
+                  </div>
+                  <div class="index_item index_items-five">
+                    <span>05</span>
+                    <span class="index_item-active-bar"></span>
+                  </div>
+                </div>
+
+                <div class="progress_bar">
+                  <div class="progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about_inner">
+          <div class="about_content" data-overlay-layer="">
+            <div class="about_background" data-overlay="">
+              <picture>
+                <source
+                  srcset="
+                    https://images.unsplash.com/photo-1599840689193-b218754f3d01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1599840689193-b218754f3d01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
+                  alt="about background"
+                />
+              </picture>
+            </div>
+            <div class="about_content-wrapper">
+              <div class="about_content-heading">
+                <h4>OVA</h4>
+                <h2 data-split="chars">Overview</h2>
+              </div>
+              <div class="about_content-text">
+                <p data-split="lines">
+                  First slide description. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Omnis doloremque quasi impedit
+                  assumenda?
+                </p>
+              </div>
+            </div>
+            <div class="about_content-wrapper">
+              <div class="about_content-heading">
+                <h4>OVA</h4>
+                <h2 data-split="chars">Mission</h2>
+              </div>
+              <div class="about_content-text">
+                <p data-split="lines">
+                  Second slide description. We strive to create value through
+                  innovation and resilience in every investment we make.
+                </p>
+              </div>
+            </div>
+            <div class="about_content-wrapper">
+              <div class="about_content-heading">
+                <h4>OVA</h4>
+                <h2 data-split="chars">Vision</h2>
+              </div>
+              <div class="about_content-text">
+                <p data-split="lines">
+                  Third slide description. Building a future where technology
+                  and sustainability go hand in hand for a better world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="height: 100vh; background-color: red"></section>
+    </main>
+    <script src="./scripts/lenis.js" defer></script>
+    <script src="./scripts/gsap.js" defer></script>
+    <script src="./scripts/scrolltrigger.js" defer></script>
+    <script src="./scripts/splittext.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
+  </body>
+</html>
