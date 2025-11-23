@@ -505,6 +505,201 @@ position: absolute;
   opacity: 1;
   visibility: visible;
 }
+.portfolio_block-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: cover;
+  will-change: opacity, transform;
+}
+
+.slide-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio_block-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 6vw 7vw;
+  pointer-events: none;
+}
+
+.portfolio_block-content-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6vw 7vw;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.portfolio_block-content-inner.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portfolio_block-content-description {
+  max-width: 500px;
+  pointer-events: auto;
+}
+
+.portfolio_block-index {
+ z-index: 3;
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2vw;
+  max-width: fit-content;
+  right: 0;
+}
+
+.index_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.portfolio_index-items {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 18px;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+
+
+.index_item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.index_item-active-bar{
+  height: 2px;
+  width: 0px;
+  background: #fff;
+  display: flex;
+    transition: width 0.5s ease;
+    will-change: width;
+}
+
+.index_item.active .index_item-active-bar {
+  width: 20px;
+}
+
+
+.index_item span:first-child {
+  transition: 0.3s color ease;
+}
+
+.index_item.active span {
+  color: #ffffff75;
+}
+
+.progress_bar {
+width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+position: absolute;
+  right: -15px;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #fff;
+}
+
+.portfolio_block-background::after {
+  content: '';
+  position: absolute;
+  background: #00000075;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.portfolio_block-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.about_background :is(picture, img) {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.about_background[data-overlay]:first-child{
+  z-index: 0;
+}
+.about_background picture::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #00000040;
+  top: 0;
+  left: 0;
+}
+
+.about_content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6vw;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 5vw;
+  z-index: 1;
+  opacity: 0; /* Hidden by default, GSAP will handle visibility */
+  visibility: hidden;
+}
+
+.about_content-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
 
 .about_content-heading {
   text-align: right;
@@ -514,4 +709,109 @@ position: absolute;
   max-width: 320px;
   width: 100%;
   padding-top: 40px;
+}
+
+/*---------------
+  Creation Section Styles
+  ---------------*/
+.creation {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.creation_inner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creation_backgrounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.creation_bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.creation_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background_initial,
+.background_clip,
+.background_last {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.creation_content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content_initial,
+.content_center,
+.content_end {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content_initial h2 {
+  font-size: clamp(40px, 4vw, 80px);
+  line-height: 1.1;
+}
+
+.content_center {
+  opacity: 0;
+  padding: 0 20px;
+}
+
+.content_center p {
+  max-width: 600px;
+  font-size: clamp(18px, 1.5vw, 24px);
+  line-height: 1.5;
+}
+
+.content_end {
+  opacity: 0;
+}
+
+.content_end h2 {
+  font-size: clamp(40px, 4vw, 80px);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.content_end p {
+  max-width: 400px;
+  font-size: 16px;
 }

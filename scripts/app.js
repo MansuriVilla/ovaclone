@@ -14,8 +14,165 @@ document.addEventListener("DOMContentLoaded", (event) => {
   initSplitText();
   initSlider();
   initAbout();
+  initCreation();
 });
 
+function initCreation() {
+  const section = document.querySelector(".creation");
+  const bgClip = document.querySelector(".background_clip");
+  const bgLast = document.querySelector(".background_last");
+  const contentInitial = document.querySelector(".content_initial");
+  const contentCenter = document.querySelector(".content_center");
+  const contentEnd = document.querySelector(".content_end");
+
+  if (!section) return;
+
+  // Initial states
+  gsap.set(bgClip, { clipPath: "circle(0% at 50% 100%)" });
+  gsap.set(contentCenter, { opacity: 0 });
+  gsap.set(contentEnd, { opacity: 0 });
+  gsap.set(bgLast, { opacity: 0 });
+
+  // Split text for animations
+  const initialH2 = contentInitial.querySelector("h2");
+  const centerText = new SplitText(contentCenter.querySelector("p"), {
+    type: "lines",
+  });
+  const endText = new SplitText(contentEnd.querySelector("p"), {
+    type: "lines",
+  });
+
+  let initialH2Lines = [];
+  if (initialH2) {
+    const splitInitial = new SplitText(initialH2, { type: "lines" });
+    initialH2Lines = splitInitial.lines;
+  }
+
+  // Wrap lines for reveal effect
+  [...initialH2Lines, ...centerText.lines, ...endText.lines].forEach((line) => {
+    const wrapper = document.createElement("div");
+    wrapper.style.overflow = "hidden";
+    wrapper.style.display = "block";
+    line.parentNode.insertBefore(wrapper, line);
+    wrapper.appendChild(line);
+  });
+
+  // Set initial state for initial text lines
+  if (initialH2Lines.length > 0) {
+    gsap.set(initialH2Lines, { yPercent: 100 });
+  }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "+=400%", // Adjust scroll length
+      pin: true,
+      scrub: 1,
+    },
+  });
+
+  // 0. Initial Text Entrance (As we enter the section)
+  if (initialH2Lines.length > 0) {
+    tl.to(
+      initialH2Lines,
+      {
+        yPercent: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+      },
+      "start"
+    );
+  }
+
+  // 1. Background Clip Expansion
+  tl.to(
+    bgClip,
+    {
+      clipPath: "circle(150% at 50% 100%)",
+      duration: 2, // Total duration of clip expansion
+      ease: "power2.inOut",
+    },
+    "start"
+  );
+
+  // 2. Text Transition 1: Initial text exit UP (at 50% of clip expansion)
+  // Clip starts at 'start' (0) and takes 2s. 50% is at 1s.
+  if (initialH2Lines.length > 0) {
+    tl.to(
+      initialH2Lines,
+      {
+        yPercent: -100,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power2.in",
+      },
+      "start+=0.5"
+    ); // Starts at 50% of clip expansion
+  }
+
+  // 3. Text Transition 2: Center text reveal (at 50% of clip expansion)
+  tl.to(
+    contentCenter,
+    {
+      opacity: 1,
+      duration: 0.1, // Quick reveal of container
+    },
+    "start+=0.5"
+  );
+
+  tl.from(
+    centerText.lines,
+    {
+      yPercent: 100,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power2.out",
+    },
+    "start+=1"
+  );
+
+  // 4. Text Transition 3: Center text fade out
+  tl.to(
+    contentCenter,
+    {
+      opacity: 0,
+      duration: 0.5,
+    },
+    "centerTextExit+=2.5"
+  ); // Delay to let it stay for a bit
+
+  // 5. Text Transition 4: End text reveal & Background Last reveal
+  tl.to(
+    bgLast,
+    {
+      opacity: 1,
+      duration: 1,
+    },
+    "endSequence"
+  );
+
+  tl.to(
+    contentEnd,
+    {
+      opacity: 1,
+      duration: 0.5,
+    },
+    "endSequence"
+  );
+
+  tl.from(
+    endText.lines,
+    {
+      yPercent: 100,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power2.out",
+    },
+    "endSequence"
+  );
+}
 function initAbout() {
   const section = document.querySelector(".about");
   const wrappers = document.querySelectorAll(".about_content-wrapper");
@@ -349,7 +506,51 @@ function initSplitText() {
     if (type === "lettersmix" && split.chars) {
       const chars = split.chars;
       const originalChars = chars.map((c) => c.innerText);
-      const randomChars = "ABC!@#$%^&*()<>{}[]";
+      const randomChars = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "!",
+        "@",
+        "#",
+        "$",
+        "%",
+        "^",
+        "&",
+        "*",
+        "-",
+        "_",
+        "+",
+        "=",
+        ";",
+        ":",
+        "<",
+        ">",
+        ",",
+      ];
 
       element.addEventListener("mouseenter", () => {
         chars.forEach((char, index) => {
@@ -363,11 +564,11 @@ function initSplitText() {
 
           gsap.to(obj, {
             val: 1,
-            duration: 0.2,
-            ease: "none",
+            duration: 0.6,
+            ease: "linear",
             onUpdate: () => {
               frameCount++;
-              if (frameCount % 2 === 0) {
+              if (frameCount % 15 === 0) {
                 char.innerText =
                   randomChars[Math.floor(Math.random() * randomChars.length)];
               }
